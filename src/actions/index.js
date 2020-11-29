@@ -16,6 +16,9 @@ export function fetchMessages(channel) {
 }
 
 export function createMessage(channel, author, content) {
+  // console.log(channel);
+  // console.log(author);
+  // console.log(content);
   const url = `${BASE_URL}/${channel}/messages`;
   const body = { author, content };
   const promise = fetch(url, {

@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import reduxPromise from 'redux-promise';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 // internal modules
 import App from './components/app';
@@ -34,7 +35,7 @@ const reducers = combineReducers({
 // Middlewares
 // const middlewares = applyMiddleware(reduxPromise);
 const middlewares = applyMiddleware(reduxPromise, logger);
-const store = createStore(reducers, initialState, middlewares);
+const store = createStore(reducers, initialState, composeWithDevTools(middlewares));
 
 // render an instance of the component in the DOM
 ReactDOM.render(

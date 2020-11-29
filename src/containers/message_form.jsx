@@ -22,11 +22,9 @@ class MessageForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createMessage(
-      this.state.selectedChannel,
-      this.state.currentUser,
-      this.state.value
-    );
+    console.log(this.state.selectedChannel);
+    console.log(this.state.currentUser);
+    this.props.createMessage(this.props.selectedChannel, this.props.currentUser, this.state.value);
     this.setState({ value: '' });
   }
 
